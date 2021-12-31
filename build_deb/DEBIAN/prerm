@@ -1,1 +1,12 @@
 #!/bin/bash
+
+echo "Uninstalling waitforlift script..."
+echo "Removing waitforlift script from /usr/bin..."
+
+# Remove entry from bashrc
+echo "Removing entry from ~/.bashrc..."
+sed -i '/# WaitForLift script. Do not remove or modify this script/d' ~/.bashrc
+sed -i '/. \/usr\/bin\/share\/waitforlift\/waitforlift/d' ~/.bashrc
+
+# ask for remove conf
+#read -p "Do you want to remove the waitforlift script? (y/n) " -n 1 -r

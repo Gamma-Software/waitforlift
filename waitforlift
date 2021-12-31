@@ -1,8 +1,10 @@
-#!/bin/bash
+#s================================================
+# WaitForLift script
+# Do not remove or modify this script
 
 function waitforlift {
     cmdpid=$!
-    music=$(cat /usr/bin/share/waitforlift/.conf)
+    music=$(cat /usr/bin/share/waitforlift/waitforlift.conf)
     echo "Music: $music"
     echo $cmdpid
     mpv $music --loop &> /dev/null &
@@ -16,3 +18,5 @@ function waitforlift {
         sleep 1
     done
 }
+
+#e================================================

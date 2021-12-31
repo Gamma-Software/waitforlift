@@ -29,6 +29,12 @@ sed -i "s/{PCK_NAME}/$PCK_NAME/g" $DEBFOLDERNAME/DEBIAN/control
 # Copy changelog
 cp ../CHANGELOG.md $DEBFOLDERNAME/DEBIAN/changelog
 
+# Copy config
+cp ../waitforlift.conf $DEBFOLDERNAME/DEBIAN/usr/bin/share/waitforlift/waitforlift.conf
+
+# Copy musics
+cp ../data/music/* $DEBFOLDERNAME/DEBIAN/usr/bin/share/waitforlift/music
+
 # Build deb package
 dpkg-deb --build --root-owner-group $DEBFOLDERNAME
 

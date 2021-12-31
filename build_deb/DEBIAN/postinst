@@ -1,3 +1,13 @@
 #!/bin/bash
 echo "Installing waitforlift script..."
 echo "Copying waitforlift script to /usr/bin..."
+
+# bashrc does not exist create it (but it should already exist)
+if [ ! -f ~/.bashrc ]; then
+    echo "Creating ~/.bashrc..."
+    touch ~/.bashrc
+fi
+
+echo "# WaitForLift script. Do not remove or modify this script
+. /usr/bin/share/waitforlift/waitforlift" >> ~/.bashrc
+source ~/.bashrc

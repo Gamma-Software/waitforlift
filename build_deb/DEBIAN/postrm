@@ -1,3 +1,1 @@
 #!/bin/bash
-echo "Uninstalling waitforlift script..."
-echo "Removing waitforlift script from /usr/bin..."
