@@ -13,11 +13,13 @@ rm -rf $DEBFOLDERNAME
 
 # Create your scripts source dir
 rm -rf $DEBFOLDERNAME # Make sure it's clean
-mkdir $DEBFOLDERNAME
+
+# Prepare the folders
+mkdir -p $DEBFOLDERNAME/$SOURCEBINPATH
+mkdir -p $DEBFOLDERNAME/usr/share/waitforlift/music
 
 # Copy your script to the user bin dir
-mkdir -p $DEBFOLDERNAME/$SOURCEBINPATH
-cp ../$SOURCEBIN $DEBFOLDERNAME/$SOURCEBINPATH
+cp ../waitforlift $DEBFOLDERNAME/usr/bin/waitforlift
 
 # Copy DEBIAN folder
 cp -r DEBIAN $DEBFOLDERNAME
@@ -30,10 +32,11 @@ sed -i "s/{PCK_NAME}/$PCK_NAME/g" $DEBFOLDERNAME/DEBIAN/control
 cp ../CHANGELOG.md $DEBFOLDERNAME/DEBIAN/changelog
 
 # Copy config
-cp ../waitforlift.conf $DEBFOLDERNAME/DEBIAN/usr/bin/share/waitforlift/waitforlift.conf
+cp ../waitforlift.conf $DEBFOLDERNAME/usr/share/waitforlift/waitforlift.conf
 
 # Copy musics
-cp ../data/music/* $DEBFOLDERNAME/DEBIAN/usr/bin/share/waitforlift/music
+cp ../data/music/* $DEBFOLDERNAME/usr/share/waitforlift/music
+
 
 # Build deb package
 dpkg-deb --build --root-owner-group $DEBFOLDERNAME

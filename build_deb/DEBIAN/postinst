@@ -8,6 +8,6 @@ if [ ! -f ~/.bashrc ]; then
     touch ~/.bashrc
 fi
 
-echo "# WaitForLift script. Do not remove or modify this script
-. /usr/bin/share/waitforlift/waitforlift" >> ~/.bashrc
-source ~/.bashrc
+#echo -e "\n# WaitForLift script. Do not remove or modify this script
+#. /usr/share/waitforlift/waitforlift" >> ~/.bashrc
+#source ~/.bashrc
