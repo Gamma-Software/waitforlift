@@ -6,13 +6,13 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-echo "Installing add_dumb_things script..."
-echo "Copying add_dumb_things script to /usr/bin..."
+echo "Installing waitforlift script..."
+echo "Copying waitforlift script to /usr/bin..."
 
 # return error if script already exists
-if [ -f /usr/bin/add_dumb_things ]; then
-   echo "add_dumb_things script already exists" 1>&2
+if [ -f /usr/bin/waitforlift ]; then
+   echo "waitforlift script already exists" 1>&2
    exit 1
 else
-    cp add_dumb_things.sh /usr/bin/add_dumb_things
+    cp waitforlift /usr/bin/waitforlift
 fi

@@ -1,6 +1,6 @@
 # Configure your paths and filenames
 SOURCEBINPATH=/usr/bin
-SOURCEBIN=add_dumb_things
+SOURCEBIN=waitforlift
 PCK_NAME=dumb-things-to-remember
 DEBEMAIL="valentin.rudloff.perso@gmail.com"
 DEBFULLNAME="Valentin RUDLOFF"

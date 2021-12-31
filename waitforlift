@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function waitforlift {
+    cmdpid=$!
+    music=$(cat /usr/bin/share/waitforlift/.conf)
+    echo "Music: $music"
+    echo $cmdpid
+    mpv $music --loop &> /dev/null &
+    while [ 1 ]
+    do
+        ps -p $cmdpid > /dev/null
+        if [[ $? -ne 0 ]]; then
+            pkill -9 mpv
+            break
+        fi
+        sleep 1
+    done
+}
