@@ -1,18 +1,11 @@
 #!/bin/bash
-# Script by Valentin Rudloff
 
-trap ctrl_c INT
+commands=$@
+exec $commands &
 
-function ctrl_c() {
-    echo "I'll take the stairs..."
-    kill -9 $!
-    pkill -9 mpv &> /dev/null
-    trap - INT
-}
-
-cmdpid=$! # get the pid of the last command
+cmdpid=$! # Get the pid from the command
 music=$(cat /usr/share/waitforlift/waitforlift.conf)
-mpv $music --loop &> /dev/null &> /dev/null
+mpv $music --loop &> /dev/null &
 while [ 1 ]
 do
     ps -p $cmdpid > /dev/null
@@ -21,4 +14,4 @@ do
         break
     fi
     sleep 1
-done
+done &> /dev/null # Ignore the output when the process is killed by ctrl c via interrupt_command()
