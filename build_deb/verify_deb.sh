@@ -31,7 +31,7 @@ else
 fi
 
 source ~/.bashrc
-complete | grep -q waitforlift
+cat /etc/bash_completion.d/waitforlift &> /dev/null
 if [ $? -eq 0 ]; then
     success_msg "4/8 The autocompletion has been installed -> OK"
 else

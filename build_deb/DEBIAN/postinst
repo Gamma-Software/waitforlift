@@ -11,3 +11,4 @@ echo "complete -F _command waitforlift" > /etc/bash_completion.d/waitforlift
  
 echo "log out -> log in again to use the autocompletion capabilities"
 echo "or run 'source ~/.bashrc'"
+echo "Please install mpv dependancies with the command apt-get -f install"
