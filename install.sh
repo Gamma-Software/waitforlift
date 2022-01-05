@@ -16,3 +16,14 @@ if [ -f /usr/bin/waitforlift ]; then
 else
     cp waitforlift /usr/bin/waitforlift
 fi
+
+echo "install autocompletion capabilities for waitforlift script"
+# create the bash-completion folder if needed
+if [ ! -d /etc/bash_completion.d ]; then
+    mkdir -p /etc/bash_completion.d
+fi
+
+# Permits the autocompletion of the waitforlift command
+echo "complete -F _command waitforlift" > /etc/bash_completion.d/waitforlift
+
+source ~/.bashrc
