@@ -1,13 +1,13 @@
 #!/bin/bash
-echo "Installing waitforlift script..."
-echo "Copying waitforlift script to /usr/bin..."
+echo "Install autocompletion capabilities for waitforlift script"
 
-# bashrc does not exist create it (but it should already exist)
-if [ ! -f ~/.bashrc ]; then
-    echo "Creating ~/.bashrc..."
-    touch ~/.bashrc
+# create the bash-completion folder if needed
+if [ ! -d /etc/bash_completion.d ]; then
+    mkdir -p /etc/bash_completion.d
 fi
 
-#echo -e "\n# WaitForLift script. Do not remove or modify this script
-#. /usr/share/waitforlift/waitforlift" >> ~/.bashrc
-#source ~/.bashrc
+# Permits the autocompletion of the waitforlift command
+echo "complete -F _command waitforlift" > /etc/bash_completion.d/waitforlift
+ 
+echo "log out -> log in again to use the autocompletion capabilities"
+echo "or run 'source ~/.bashrc'"

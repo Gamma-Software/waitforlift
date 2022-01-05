@@ -16,3 +16,12 @@ if [ ! -f /usr/bin/waitforlift ]; then
 else
     rm /usr/bin/waitforlift
 fi
+
+# remove the completion if it exists
+echo "uninstall autocompletion capabilities for waitforlift script"
+if [ -f /etc/bash_completion.d/waitforlift ]; then
+   rm /etc/bash_completion.d/waitforlift
+fi
+
+echo "log out -> log to finish the uninstallation"
+echo "or run 'source ~/.bashrc'"

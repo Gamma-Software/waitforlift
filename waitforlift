@@ -1,6 +1,14 @@
 #!/bin/bash
 
 commands=$@
+
+# Check if the command is no empty
+if [ -z "$commands" ]; then
+    echo "No command specified"
+    echo "Execute 'waitforlift <long_command>' to play a little music during the <long_command> execution"
+    exit 1
+fi
+
 exec $commands &
 
 cmdpid=$! # Get the pid from the command
