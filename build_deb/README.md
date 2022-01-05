@@ -1,7 +1,7 @@
 # Generate Debian package
 
 The generation of the debian package is done with a Docker container based on ubuntu 18.04 image.
-This docker image is coded to work on the project [DumbThingToRemember](https://github.com/Gamma-Software/DumbThingsToRemember).
+This docker image is coded to work on the project [WaitForlift](https://github.com/Gamma-Software/WaitForlift).
 
 ## Scripts
 

@@ -27,7 +27,7 @@ jobs:
       - name: build
         run: |
           cd ..
-          mv DumbThingsToRemember/* /build
+          mv waitforlift/* /build
           cd /build
           ./build_deb/build_deb.sh ${{ env.RELEASE_VERSION }}
       - uses: actions/upload-artifact@v2
