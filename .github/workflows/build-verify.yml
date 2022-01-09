@@ -32,7 +32,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: debian-pck-${{ env.RELEASE_VERSION }}
-          path: /build/build_deb/*.deb
+          path: $PWD/build/build_deb/*.deb
           retention-days: 1 # Should be revised 
   verify:
     # The type of runner that the job will run on
