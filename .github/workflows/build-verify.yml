@@ -27,8 +27,6 @@ jobs:
       - name: build
         run: |
           ./build_deb/build_deb.sh ${{ env.RELEASE_VERSION }}
-      - name: build
-        run: echo $PWD
       - uses: actions/upload-artifact@v2
         with:
           name: debian-pck-${{ env.RELEASE_VERSION }}
@@ -48,6 +46,10 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: debian-pck-${{ env.RELEASE_VERSION }}
+      - name: move debian-pck
+        run: |
+          ls -l *
+          mv *.deb build_deb
       - name: verify
         run: |
           ./build_deb/verify_deb.sh ${{ env.RELEASE_VERSION }}

@@ -8,4 +8,4 @@ WORKDIR /build
 RUN apt update -y && apt install -y dpkg bash-completion mpv
 
 # Create the package
-CMD ./build_deb/build_deb.sh $VERSION; ./build_deb/verify_deb.sh $VERSION
+CMD ./build_deb/build_deb.sh $VERSION; ./build_deb/verify_deb.sh $VERSION /build/build_deb/
